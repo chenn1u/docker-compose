@@ -1,0 +1,16 @@
+services:
+  showdoc:
+    image: star7th/showdoc
+    container_name: showdoc
+    hostname: showdoc
+    restart: always
+    logging:
+      driver: 'json-file'
+      options:
+        max-size: '5g'
+    ports:
+      - 18081:80
+    volumes:
+      - ./data/html:/var/www/html
+    privileged: true
+    user: root
